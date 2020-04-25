@@ -18,6 +18,8 @@ Please also note that you need a unique id that you can refer to later. Preferab
 
 ## Getting Started
 
+Imagine you have a webservice that allows users to track their bycicle route. You now save all the tracking data for every section of the track to a distributed blob storage cache store. After the user has finished the ride, you take the route files and calculate the distance and persist it to database.
+
 ```js
 const BlobStoragePartioner = require("./BlobStoragePartioner");
 const uuid = require("uuid/v4");
@@ -26,21 +28,24 @@ async function test() {
   /* INIT */
   const storages = "mystorageaccount0:accessKey0;mystorageaccount1:accessKey1"; // you can specify a virtually endless amount of storage accounts
 
-  const BlobStorage = new BlobStoragePartioner(storages);
-  await BlobStorage.init();
+  const storageCluster = new BlobStoragePartitioner(storages);
+  await storageCluster.init();
 
   /* CACHE */
   const sessionId = uuid(); // this should be persisted somewhere
 
-  await BlobStorage.saveToCache("my content", "my_file.txt", sessionId);
-  await BlobStorage.saveToCache("my content", "my_file_2.txt", sessionId);
-  const cached = await BlobStorage.loadFromCache("my_file.txt", sessionId);
-  console.log(sessionId, cached);
-  const cached2 = await BlobStorage.loadFromCache("my_file_2.txt", sessionId);
-  console.log(sessionId, cached2);
+  // will save the files and content always to the same storage account for the same sessionId
+  await storageCluster.saveToCache("data 1", "section_a.txt", sessionId);
+  await storageCluster.saveToCache("data 2", "section_b.txt", sessionId);
+
+  // load from cache
+  const a = await storageCluster.loadFromCache("section_a.txt", sessionId);
+  const b = await storageCluster.loadFromCache("section_b.txt", sessionId);
+
+  // ... work with the data you cached
 
   // delete everything when the session is no longer active
-  await BlobStorage.deleteCache(sessionId);
+  await storageCluster.deleteCache(sessionId);
 }
 
 test();
