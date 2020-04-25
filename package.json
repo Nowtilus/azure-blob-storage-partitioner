@@ -7,6 +7,10 @@
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test": "jest --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nowtilus/azure-blob-storage-partitioner"
+  },
   "author": "Ingo Eichhorst <ingo.eichhorst@nowtilus.tv>",
   "license": "MIT",
   "dependencies": {

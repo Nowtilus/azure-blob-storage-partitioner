@@ -1,0 +1,7 @@
+.vscode
+coverage
+node_modules
+only_internal.js
+lib/__mocks__
+lib/*.spec.js
+.travis.yml
