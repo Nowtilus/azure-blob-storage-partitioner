@@ -1,5 +1,7 @@
 # azure-blob-storage-partitioner
 
+[![Build Status](https://travis-ci.com/Nowtilus/azure-blob-storage-partitioner.svg?branch=master)](https://travis-ci.com/Nowtilus/azure-blob-storage-partitioner) [![Coverage Status](https://coveralls.io/repos/github/Nowtilus/azure-blob-storage-partitioner/badge.svg?branch=master)](https://coveralls.io/github/Nowtilus/azure-blob-storage-partitioner?branch=master)
+
 This module can be a good fit if you have millions of items to cache in Azure that eceed the limits of a single azure blob storage account.
 
 https://docs.microsoft.com/de-de/azure/azure-resource-manager/management/azure-subscription-service-limits#storage-limits
