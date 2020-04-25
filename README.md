@@ -9,7 +9,7 @@ This module can be a good fit if you have millions of items to cache in Azure th
 e.g.
 
 - Maximum request rate per storage account - 20,000 requests per second
-- Maximum ingress1 per storage account (US, Europe regions) - 25 Gbps
+- Maximum ingress per storage account (US, Europe regions) - 25 Gbps
 - Maximum storage account capacity 5 PiB
 
 Note: The numbers are copied from azure at 2020-04-24
