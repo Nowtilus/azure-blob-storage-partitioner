@@ -1,4 +1,4 @@
-BlobStoragePartioner
+# azure-blob-storage-partitioner
 
 This module can be a good fit if you have millions of items to cache in Azure that eceed the limits of a single azure blob storage account.
 
@@ -14,7 +14,7 @@ Note: The numbers are copied from azure at 2020-04-24
 
 Please also note that you need a unique id that you can refer to later. Preferably uuid/v4 to partion the files on multiple storage accounts.
 
-# Getting Started
+## Getting Started
 
 ```js
 const BlobStoragePartioner = require("./BlobStoragePartioner");
