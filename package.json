@@ -1,5 +1,5 @@
 {
-  "name": "azure-blob-storage-partitioner",
+  "name": "@nowtilus/azure-blob-storage-partitioner",
   "version": "1.0.0",
   "description": "Module to distribute your textual data to multiple Azure blob storages to overcome the limits. Espacially usefull as distributed cache.",
   "main": "index.js",
